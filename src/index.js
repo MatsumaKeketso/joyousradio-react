@@ -1,19 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import '@fontsource-variable/lora';
-import '@fontsource/great-vibes';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { initializeApp } from 'firebase/app';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "@fontsource-variable/lora";
+import "@fontsource/great-vibes";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { initializeApp } from "firebase/app";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { BottomNavigation, BottomNavigationAction, createStyles, createTheme, Stack, ThemeProvider, Typography } from '@mui/material';
-import { firebaseConfig } from './fb';
+  BottomNavigation,
+  BottomNavigationAction,
+  createStyles,
+  createTheme,
+  Stack,
+  ThemeProvider,
+  Typography,
+} from "@mui/material";
+import { firebaseConfig } from "./fb";
+import About from "./pages/about";
 
-const app = initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig);
 
 const router = createBrowserRouter([
   {
@@ -22,52 +28,89 @@ const router = createBrowserRouter([
   },
   {
     path: "/about",
-    element: <Stack>
-      <Typography>About</Typography>
-    </Stack>,
+    element: <About />,
+  },
+  {
+    path: "/about",
+    element: (
+      <Stack>
+        <Typography>About</Typography>
+      </Stack>
+    ),
+  },
+  {
+    path: "/about",
+    element: (
+      <Stack>
+        <Typography>About</Typography>
+      </Stack>
+    ),
+  },
+  {
+    path: "/about",
+    element: (
+      <Stack>
+        <Typography>About</Typography>
+      </Stack>
+    ),
+  },
+  {
+    path: "/about",
+    element: (
+      <Stack>
+        <Typography>About</Typography>
+      </Stack>
+    ),
+  },
+  {
+    path: "/about",
+    element: (
+      <Stack>
+        <Typography>About</Typography>
+      </Stack>
+    ),
   },
 ]);
 const theme = createTheme({
   palette: {
     primary: {
-      "50": "#fdd99c",
-      "100": "#f8ca79",
-      "200": "#f1b959",
-      "300": "#e7a83b",
-      "400": "#de971b",
-      "500": "#c38720",
-      "600": "#a87722",
-      "700": "#8f6824",
-      "800": "#785924",
-      "900": "#624b22"
-    }
+      50: "#fdd99c",
+      100: "#f8ca79",
+      200: "#f1b959",
+      300: "#e7a83b",
+      400: "#de971b",
+      500: "#c38720",
+      600: "#a87722",
+      700: "#8f6824",
+      800: "#785924",
+      900: "#624b22",
+    },
   },
   typography: {
     h1: {
-      fontFamily: 'Great Vibes'
+      fontFamily: "Great Vibes",
     },
     h2: {
-      fontFamily: 'Great Vibes'
+      fontFamily: "Great Vibes",
     },
     h3: {
-      fontFamily: 'Great Vibes'
+      fontFamily: "Great Vibes",
     },
     h4: {
-      fontFamily: 'Lora'
+      fontFamily: "Lora",
     },
     h5: {
-      fontFamily: 'Lora'
+      fontFamily: "Lora",
     },
     h6: {
-      fontFamily: 'Lora'
+      fontFamily: "Lora",
     },
     subtitle1: {
-      fontFamily: 'Lora'
-    }
-    ,
+      fontFamily: "Lora",
+    },
     subtitle2: {
-      fontFamily: 'Lora'
-    }
+      fontFamily: "Lora",
+    },
   },
   components: {
     MuiButton: {
@@ -75,17 +118,15 @@ const theme = createTheme({
         disableElevation: true,
         sx: {
           borderRadius: 30,
-        }
-      }
-    }
-  }
-
-})
-const root = ReactDOM.createRoot(document.getElementById('root'));
+        },
+      },
+    },
+  },
+});
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-
       <RouterProvider router={router} />
     </ThemeProvider>
     <BottomNavigation>
