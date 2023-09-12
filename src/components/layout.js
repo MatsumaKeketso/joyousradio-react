@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+
 import Appbar from "./Appbar";
 import { Container, Stack } from "@mui/material";
 import { useLocation } from "react-router-dom";
@@ -18,9 +19,11 @@ function Layout(props) {
     console.log(getPageName());
   }, []);
   return (
-    <Stack>
+    <Stack flex={1} height={"100%"} width={"100%"} sx={{ overflowX: "hidden" }}>
       <Appbar pageName={getPageName()} />
-      <Container>{children}</Container>
+      <Stack flex={1} height={"100%"} width={"100%"}>
+        {children}
+      </Stack>
     </Stack>
   );
 }
