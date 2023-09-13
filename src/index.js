@@ -18,6 +18,9 @@ import {
 } from "@mui/material";
 import { firebaseConfig } from "./fb";
 import About from "./pages/about";
+import Donate from "./pages/donate";
+import Church from "./pages/church";
+import Gallery from "./pages/gallery";
 
 const app = initializeApp(firebaseConfig);
 
@@ -31,7 +34,19 @@ const router = createBrowserRouter([
     element: <About />,
   },
   {
-    path: "/about",
+    path: "/donate",
+    element: <Donate />,
+  },
+  {
+    path: "/church",
+    element: <Church />,
+  },
+  {
+    path: "/gallery",
+    element: <Gallery />,
+  },
+  {
+    path: "/contact",
     element: (
       <Stack>
         <Typography>About</Typography>
@@ -39,31 +54,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/about",
-    element: (
-      <Stack>
-        <Typography>About</Typography>
-      </Stack>
-    ),
-  },
-  {
-    path: "/about",
-    element: (
-      <Stack>
-        <Typography>About</Typography>
-      </Stack>
-    ),
-  },
-  {
-    path: "/about",
-    element: (
-      <Stack>
-        <Typography>About</Typography>
-      </Stack>
-    ),
-  },
-  {
-    path: "/about",
+    path: "/live",
     element: (
       <Stack>
         <Typography>About</Typography>
@@ -129,9 +120,6 @@ root.render(
     <ThemeProvider theme={theme}>
       <RouterProvider router={router} />
     </ThemeProvider>
-    <BottomNavigation>
-      <BottomNavigationAction label="Listen"></BottomNavigationAction>
-    </BottomNavigation>
   </React.StrictMode>
 );
 

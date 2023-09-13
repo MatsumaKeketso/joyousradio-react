@@ -12,22 +12,25 @@ import {
 } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
-
+export const links = [
+  "/",
+  "about",
+  "donate",
+  "church",
+  "gallery",
+  "contact",
+  "live",
+];
 function Appbar(props) {
   const [openDrawer, setOpenDrawer] = useState(false);
   const { pageName } = props;
-  const links = [
-    "/",
-    "about",
-    "donate",
-    "church",
-    "gallery",
-    "contact",
-    "live",
-  ];
+
   useEffect(() => {}, []);
   return (
-    <AppBar color="inherit" variant="outlined">
+    <AppBar
+      color={pageName === "/" ? "transparent" : "inherit"}
+      variant="outlined"
+    >
       <SwipeableDrawer
         open={openDrawer}
         onClose={() => {
@@ -35,7 +38,7 @@ function Appbar(props) {
         }}
       >
         <Stack>
-          <Box sx={{ height: 200 }} alignItems={"center"}>
+          <Box p={5} sx={{ height: 150 }} alignItems={"center"}>
             <img
               style={{
                 width: "100%",
@@ -54,7 +57,10 @@ function Appbar(props) {
                   variant={pageName == link ? "contained" : "text"}
                   href={link === "/" ? link : `/${link}`}
                 >
-                  <Typography variant="button">
+                  <Typography
+                    variant="button"
+                    color={pageName == link ? "white" : "GrayText"}
+                  >
                     {link === "/" ? "home" : link}
                   </Typography>
                 </Button>
@@ -67,14 +73,16 @@ function Appbar(props) {
         <Toolbar variant="dense">
           <Stack flex={1}>
             <Box sx={{ width: 80 }} alignItems={"center"}>
-              <img
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                }}
-                src={require("../assets/h.jpg")}
-              />
+              <a href="/">
+                <img
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                  src={require("../assets/JR-stroke.png")}
+                />
+              </a>
             </Box>
           </Stack>
           <Stack
@@ -90,7 +98,10 @@ function Appbar(props) {
                   variant={pageName == link ? "contained" : "text"}
                   href={link === "/" ? link : `/${link}`}
                 >
-                  <Typography variant="button">
+                  <Typography
+                    variant="button"
+                    color={pageName == link ? "white" : "GrayText"}
+                  >
                     {link === "/" ? "home" : link}
                   </Typography>
                 </Button>
@@ -103,7 +114,7 @@ function Appbar(props) {
                 setOpenDrawer(true);
               }}
             >
-              <Menu />
+              <Menu sx={{ color: pageName === "/" ? "white" : "black" }} />
             </IconButton>
           </Stack>
         </Toolbar>

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Appbar from "./Appbar";
 import { Container, Stack } from "@mui/material";
 import { useLocation } from "react-router-dom";
+import Footer from "./Footer";
 
 function Layout(props) {
   const { children, pageName } = props;
@@ -24,6 +25,7 @@ function Layout(props) {
       <Stack flex={1} height={"100%"} width={"100%"}>
         {children}
       </Stack>
+      {getPageName() !== "/" && <Footer />}
     </Stack>
   );
 }
