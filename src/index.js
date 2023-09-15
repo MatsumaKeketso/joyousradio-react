@@ -21,8 +21,8 @@ import About from "./pages/about";
 import Donate from "./pages/donate";
 import Church from "./pages/church";
 import Gallery from "./pages/gallery";
-
-const app = initializeApp(firebaseConfig);
+import Contact from "./pages/contact";
+import Live from "./pages/live";
 
 const router = createBrowserRouter([
   {
@@ -47,19 +47,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/contact",
-    element: (
-      <Stack>
-        <Typography>About</Typography>
-      </Stack>
-    ),
+    element: <Contact />,
   },
   {
     path: "/live",
-    element: (
-      <Stack>
-        <Typography>About</Typography>
-      </Stack>
-    ),
+    element: <Live />,
   },
 ]);
 const theme = createTheme({
